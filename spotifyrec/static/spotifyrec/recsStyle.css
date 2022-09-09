@@ -1,0 +1,52 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    margin-top: -8px;
+    padding: 0px 10%;
+    overflow: hidden;
+    background-color: #fff;
+    border: #82ca9c;
+    border-top-style: solid;
+    border-width: 5px;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #82ca9c;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+li a:hover {
+    background-color: #82ca9c;
+    color: #fff;
+}
+
+.header {
+    background-color: #82ca9c; 
+    width: 100%;
+    height: 250px;
+    color: #fff;
+    z-index: 2;
+    position: relative;
+    padding: 85px 10%;
+}
+
+.recs_list {
+    border-collapse: collapse;
+    margin: 0px 10%;
+}
+
+tr {
+    border-bottom: solid rgb(225, 225, 225);
+}
+th, td {
+    padding: 10px 0px;
+    padding-right: 5px;
+}

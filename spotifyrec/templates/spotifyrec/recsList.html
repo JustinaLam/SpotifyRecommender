@@ -1,0 +1,54 @@
+<!doctype html>
+    <head>
+        {% load static %}
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'spotifyrec/assets/css/roboto-webfont.css' %}">
+        <link rel="stylesheet" href="{% static 'spotifyrec/style.css' %}">
+        <link rel="stylesheet" href="{% static 'spotifyrec/recsStyle.css' %}">
+        
+        <title>
+            RECOMMENDATIONS LIST
+        </title>
+
+        <style> 
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><a class="active" href="{% url 'home' %}">Home</a></li>
+        </ul>
+
+        <div class="header">
+            <h1 style="font-size:80px; ">RECOMMENDATIONS LIST</h1>
+        </div>
+
+        {% if recs_list %}
+            <table class="recs_list">
+                <thead>
+                <tr style="text-align:left; font-weight:bolder; text-decoration:underline;">
+                    <th>Track Name</th>
+                    <th>Artist</th>
+                    <th>Album</th>
+                    <th>Track URL</th>
+                    <th class="similarity">Percent Similarity</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for rec in recs_list %}
+                    <tr>
+                        <td>{{ rec.track }}</td>
+                        <td>{{ rec.artist }}</td>
+                        <td>{{ rec.album }}</td>
+                        <td><a href="https://open.spotify.com/track/{{ rec.trackURI }}">https://open.spotify.com/track/{{ rec.trackURI }}</a></td>
+                        <td class="similarity">{{ rec.similarity|floatformat:3 }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p> No Recommendations Found </p>
+        {% endif %}
+
+        
+    </body>
+</html>

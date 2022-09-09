@@ -1,0 +1,104 @@
+<!doctype html>
+    <html class="no-js" lang="">
+    <head>
+        {% load static %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Spotify Song Recommender</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="{% static 'spotifyrec/assets/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'spotifyrec/assets/css/roboto-webfont.css' %}">
+        <link rel="stylesheet" href="{% static 'spotifyrec/style.css' %}">
+
+    </head>
+    <body>
+		<div class='preloader'><div class='loaded'>&nbsp;</div></div>
+
+        <!-- Menu bar -->
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="{% static 'spotifyrec/images/newLogo.png' %}" alt="Logo" /></a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#">Home</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <!-- Header -->
+        <header id="home" class="home">
+            <div class="overlay-fluid-block">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="home-wrapper">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="home-content">
+
+                                    <h1>GENERATE PERSONALIZED SONG RECOMMENDATIONS</h1>
+                                    <p>Enter a public playlist URL below and our algorithm will generate 25 recommended songs with similar characteristics like genre, tempo, and lyrics sentiment.</p>
+
+                                    <div class="row">
+                                        <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                                            <div class="home-contact">
+                                                <div class="input-group">
+                                                    <form action="request" method="get" name="urlForm">
+                                                        <input type="text" class="form-control" placeholder="Enter your public playlist URL" name="inputURL">
+                                                        <input type="submit" class="form-control" value="GENERATE" name="generateBtn">
+                                                    </form>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>			
+            </div>
+        </header>
+
+        <!--Footer-->
+        <footer id="footer" class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-wrapper">
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="footer-brand">
+                                <img src="{% static 'spotifyrec/images/newLogo.png' %}" alt="logo" />
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="copyright">
+                                <p>Justina Lam</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="{% static 'spotifyrec/assets/js/vendor/jquery-1.11.2.min.js' %}"></script>
+        <script src="{% static 'spotifyrec/assets/js/main.js' %}"></script>
+    </body>
+</html>
