@@ -33,7 +33,7 @@ SECRET_KEY = "django-insecure-xu#=m#3q3&lupg(nom=hb^d0ac@t4h%s(pt*p&u)g)k60key#1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://spotify-song-recommendations.herokuapp.com/']
+ALLOWED_HOSTS = ['spotify-song-recommendations.herokuapp.com/']
 
 
 # Application definition
