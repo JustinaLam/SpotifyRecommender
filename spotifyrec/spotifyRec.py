@@ -19,6 +19,24 @@ from spotifyrec.models import SongRec
 from requests.exceptions import ReadTimeout
 
 
+client_id = os.environ['client_id']
+client_secret = os.environ['client_secret']
+
+# Authenticate without signing into an account
+client_credentials_manager = SpotifyClientCredentials(
+    client_id=client_id,
+    client_secret=client_secret)
+
+
+sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager, requests_timeout=10, retries=2)
+
+# Select 500 random rows (songs) from the first 5,000 rows in the full dataset (>16,000 total)
+allSongDf = pd.read_csv("https://raw.githubusercontent.com/enjuichang/PracticalDataScience-ENCA/main/data/raw_data.csv", 
+                        index_col=False, 
+                        skiprows=(lambda rIndex: rIndex != 0 and rIndex not in random.sample(range(5000), 500)))
+
+
+
 # Extract information about each track in a playlist
 def getPlaylistInfoDf(tracks):
     # List of dictionaries containing info on each track
@@ -209,26 +227,8 @@ def init(playlist_link):
     # Config variables: client_id, client_secret
     print("Input Playlist Link:")
     print(playlist_link)
-    
-    client_id = os.environ['client_id']
-    client_secret = os.environ['client_secret']
-    print(client_id)
-    print(client_secret)
-
-    # Authenticate without signing into an account
-    client_credentials_manager = SpotifyClientCredentials(
-        client_id=client_id,
-        client_secret=client_secret)
-
-    sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager, requests_timeout=10, retries=2)
 
     playlist_URI = playlist_link.split("/")[-1].split("?")[0]
-
-    # Select 500 random rows (songs) from the first 5,000 rows in the full dataset (>16,000 total)
-    allSongDf = pd.read_csv("https://raw.githubusercontent.com/enjuichang/PracticalDataScience-ENCA/main/data/raw_data.csv", 
-                            index_col=False, 
-                            skiprows=(lambda rIndex: rIndex != 0 and rIndex not in random.sample(range(5000), 500)))
-
 
     # Get track, artist, and album info for tracks in training playlist
     trainingTracks = sp.playlist_tracks(playlist_URI)["items"]
@@ -267,7 +267,10 @@ def init(playlist_link):
 
     playlist_vector = training_feature_set.drop(['id'], axis=1).sum(axis=0)
 
+
     top_50_recs_df = generate_recommendations(allSongsInfoDf, playlist_vector, no_overlap_complete_feature_set)
+    top_50_recs_df.to_csv("top50recs.csv")
+
 
     for index, row in top_50_recs_df.iterrows():
         newObj = SongRec(
