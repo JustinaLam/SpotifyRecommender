@@ -204,8 +204,8 @@ def generate_recommendations(allSongsInfoDf, playlist_vector, no_overlap_complet
     return top_50_recs_df
 
 
-def init():
-    # Config variables: client_id, client_secret, playlist_link
+def init(playlist_link):
+    # Config variables: client_id, client_secret
     print("Input Playlist Link:")
     print(playlist_link)
 
@@ -261,10 +261,7 @@ def init():
 
     playlist_vector = training_feature_set.drop(['id'], axis=1).sum(axis=0)
 
-
     top_50_recs_df = generate_recommendations(allSongsInfoDf, playlist_vector, no_overlap_complete_feature_set)
-    top_50_recs_df.to_csv("top50recs.csv")
-
 
     for index, row in top_50_recs_df.iterrows():
         newObj = SongRec(
