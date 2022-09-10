@@ -1,6 +1,7 @@
 # SpotifyRecommender
 
 Demo: https://drive.google.com/file/d/1M7HDwxO94ZaJADHt8ZXExAVMSvyVZR4N/view?usp=sharing
+
 Note: Demo does not show loading time for connecting to Spotify API and generating list of recommendations.
 
 Description:
