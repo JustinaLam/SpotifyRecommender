@@ -1,5 +1,5 @@
 from matplotlib import artist
-import spotipy as sp
+import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import sklearn
 from sklearn.metrics.pairwise import cosine_similarity
@@ -212,6 +212,8 @@ def init(playlist_link):
     
     client_id = os.environ['client_id']
     client_secret = os.environ['client_secret']
+    print(client_id)
+    print(client_secret)
 
     # Authenticate without signing into an account
     client_credentials_manager = SpotifyClientCredentials(
