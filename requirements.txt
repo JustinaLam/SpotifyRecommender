@@ -1,4 +1,10 @@
 gunicorn
+dj-database-url
+django-heroku
+gunicorn
+psycopg2
+python-decouple
+whitenoise
 async-timeout==4.0.2
 beautifulsoup4==4.11.1
 click==8.1.3
