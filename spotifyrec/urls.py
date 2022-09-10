@@ -10,7 +10,7 @@ recs_list_view = views.RecsListView.as_view(
 )
 
 urlpatterns = [
-    path("", views.home, name="default"),
+    path("/", views.home, name="default"),
     path("spotifyrec/home", views.home, name="home"),
     path("spotifyrec/getRecsList/<playlistURL>", views.list_recs, name="getRecsList"),
     path("spotifyrec/showRecsList/<x>", recs_list_view, name="showRecsList"),
