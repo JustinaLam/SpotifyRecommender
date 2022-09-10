@@ -1,5 +1,5 @@
 from matplotlib import artist
-import spotipy
+import spotipy as sp
 from spotipy.oauth2 import SpotifyClientCredentials
 import sklearn
 from sklearn.metrics.pairwise import cosine_similarity
