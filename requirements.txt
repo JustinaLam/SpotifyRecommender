@@ -47,7 +47,7 @@ scipy @ file:///Users/runner/miniforge3/conda-bld/scipy_1653074075583/work
 six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
 soupsieve==2.3.2.post1
 spotipy==2.20.0
-sqlparse @ file:///tmp/build/80754af9/sqlparse_1602184451250/work
+sqlparse==0.4.1
 textblob==0.17.1
 threadpoolctl @ file:///home/conda/feedstock_root/build_artifacts/threadpoolctl_1643647933166/work
 tqdm @ file:///home/conda/feedstock_root/build_artifacts/tqdm_1649051611147/work
