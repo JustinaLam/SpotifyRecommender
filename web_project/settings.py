@@ -14,7 +14,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 # set DEBUG=False, and change ALLOWED_HOSTS = ['*'] to allow specific hosts. 
 # This may result in additional work when using containers.
 
-# import dj_database_url
+import dj_database_url
 import django_heroku
 import os
 
@@ -85,10 +85,10 @@ WSGI_APPLICATION = "web_project.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # 'NAME': 'ciba',
+        # "ENGINE": "django.db.backends.sqlite3",
+        # "NAME": BASE_DIR / "db.sqlite3",
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ciba',
     }
 }
 
