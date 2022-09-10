@@ -14,8 +14,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 # set DEBUG=False, and change ALLOWED_HOSTS = ['*'] to allow specific hosts. 
 # This may result in additional work when using containers.
 
-
-
+import dj_database_url
+import django_heroku
+import os
 
 from pathlib import Path
 
@@ -30,9 +31,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-xu#=m#3q3&lupg(nom=hb^d0ac@t4h%s(pt*p&u)g)k60key#1"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://spotify-song-recommendations.herokuapp.com/']
 
 
 # Application definition
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -83,8 +85,10 @@ WSGI_APPLICATION = "web_project.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        # "ENGINE": "django.db.backends.sqlite3",
+        # "NAME": BASE_DIR / "db.sqlite3",
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ciba',
     }
 }
 
@@ -130,6 +134,8 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# STATIC_ROOT = BASE_DIR / 'static_collected'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
-STATIC_ROOT = BASE_DIR / 'static_collected'
+django_heroku.settings(locals())
