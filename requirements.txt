@@ -20,25 +20,16 @@ pandas==1.4.3
 Pillow==9.2.0
 pipenv==2022.8.5
 platformdirs==2.5.2
-pycparser @ file:///home/conda/feedstock_root/build_artifacts/pycparser_1636257122734/work
-pyOpenSSL @ file:///home/conda/feedstock_root/build_artifacts/pyopenssl_1643496850550/work
 pyparsing==3.0.9
 python-dateutil==2.8.2
-pytz @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_830e8540-4c59-42fe-9515-a6f79c24ff6dh653xa67/croots/recipe/pytz_1654762630628/work
 redis==4.3.4
 regex==2022.6.2
-requests @ file:///home/conda/feedstock_root/build_artifacts/requests_1641580202195/work
-ruamel-yaml-conda @ file:///Users/runner/miniforge3/conda-bld/ruamel_yaml_1653464548430/work
-scikit-learn @ file:///Users/runner/miniforge3/conda-bld/scikit-learn_1652976950430/work
+scikit-learn==1.1.1
 scipy==1.8.1
 soupsieve==2.3.2.post1
 spotipy==2.20.0
 sqlparse==0.4.1
 textblob==0.17.1
-threadpoolctl @ file:///home/conda/feedstock_root/build_artifacts/threadpoolctl_1643647933166/work
-tqdm @ file:///home/conda/feedstock_root/build_artifacts/tqdm_1649051611147/work
-typing_extensions @ file:///opt/conda/conda-bld/typing_extensions_1647553014482/work
-urllib3 @ file:///home/conda/feedstock_root/build_artifacts/urllib3_1647489083693/work
 virtualenv==20.16.3
 virtualenv-clone==0.5.7
 wrapt==1.14.1
