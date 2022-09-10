@@ -13,6 +13,7 @@ import pandas as pd
 import numpy as np
 import math
 import random
+import os
 
 from spotifyrec.models import SongRec
 from requests.exceptions import ReadTimeout
@@ -208,6 +209,9 @@ def init(playlist_link):
     # Config variables: client_id, client_secret
     print("Input Playlist Link:")
     print(playlist_link)
+    
+    client_id = os.environ['client_id']
+    client_secret = os.environ['client_secret']
 
     # Authenticate without signing into an account
     client_credentials_manager = SpotifyClientCredentials(
