@@ -1,8 +1,6 @@
 async-timeout==4.0.2
 beautifulsoup4==4.11.1
-charset-normalizer @ file:///home/conda/feedstock_root/build_artifacts/charset-normalizer_1644853463426/work
 click==8.1.3
-colorama @ file:///home/conda/feedstock_root/build_artifacts/colorama_1602866480661/work
 conda==4.13.0
 cycler==0.11.0
 Deprecated==1.2.13
@@ -11,14 +9,12 @@ Django==3.2.5
 filelock==3.7.1
 finta==1.3
 fonttools==4.34.3
-idna @ file:///home/conda/feedstock_root/build_artifacts/idna_1642433548627/work
-joblib @ file:///home/conda/feedstock_root/build_artifacts/joblib_1633637554808/work
 kiwisolver==1.4.3
 lxml==4.9.1
 matplotlib==3.5.2
 multitasking==0.0.11
 nltk==3.7
-numpy @ file:///Users/runner/miniforge3/conda-bld/numpy_1655989038619/work
+numpy==1.23.0
 packaging==21.3
 pandas==1.4.3
 Pillow==9.2.0
