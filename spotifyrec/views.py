@@ -30,7 +30,7 @@ def request_page(request):
 def list_recs(request, playlistURL):
     SongRec.objects.all().delete()
     # Run script to generate song recommendations as SongRec objects
-    spotifyrec.spotifyRec.init()
+    spotifyrec.spotifyRec.init(playlistURL)
     
     recs_list_view = RecsListView.as_view(
         queryset=SongRec.objects.order_by("-similarity")[:25],  # order by dec sim, :25 limits results to 25 highest sim
